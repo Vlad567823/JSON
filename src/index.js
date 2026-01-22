@@ -46,14 +46,20 @@ addBtn.addEventListener('click', () => {
 
 renderBookmarks();
 
-import products from './products';
-import template from './template.hbs';
+import products from './products.js';
 
 const productsContainer = document.getElementById('products');
-
-productsContainer.innerHTML = template(products);
-
 const searchInput = document.getElementById('search');
+
+function renderProducts(items) {
+  productsContainer.innerHTML = template(items);
+}
+
+const source = document.getElementById('products-template').innerHTML;
+const template = Handlebars.compile(source);
+
+
+renderProducts(products);
 
 searchInput.addEventListener('input', (e) => {
   const value = e.target.value.toLowerCase();
@@ -62,5 +68,9 @@ searchInput.addEventListener('input', (e) => {
     product.name.toLowerCase().includes(value)
   );
 
-  productsContainer.innerHTML = template(filteredProducts);
+  renderProducts(filteredProducts);
 });
+
+
+
+
