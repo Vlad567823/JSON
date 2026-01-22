@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html --public-url ./JSON/",
-    "deploy": "parcel build index.html --public-url ./JSON/ && gh-pages -d dist",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url ./JSON/",
+    "deploy": "parcel build src/index.html --public-url ./JSON/ && gh-pages -d dist",
     "deploy:gh-pages": "gh-pages -d dist"
   },
   "repository": {
@@ -22,5 +22,8 @@
   "homepage": "https://github.com/Vlad567823/JSON#readme",
   "devDependencies": {
     "gh-pages": "^6.3.0"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.8"
   }
 }
