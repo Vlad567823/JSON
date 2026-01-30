@@ -1,3 +1,5 @@
+import products from './products.js';
+
 const input = document.getElementById('bookmarkInput');
 const addBtn = document.getElementById('addBookmarkBtn');
 const list = document.getElementById('bookmarkList');
@@ -46,7 +48,6 @@ addBtn.addEventListener('click', () => {
 
 renderBookmarks();
 
-import products from './products.js';
 
 const productsContainer = document.getElementById('products');
 const searchInput = document.getElementById('search');
